@@ -1,17 +1,19 @@
 from sys import argv
+import json
+import file_handler
+
 
 def main():
-    
-    """
-    Sample code to read inputs from the file
-
     if len(argv) != 2:
         raise Exception("File path not entered")
     file_path = argv[1]
-    f = open(file_path, 'r')
-    Lines = f.readlines()
-    //Add your code here to process the input commands
-    """
-    
+
+    # Open the files and send it to the file reader
+    input_file = open(file_path, 'r')
+
+    file = file_handler.File_handler()
+    file.read_file(input_file)
+
+
 if __name__ == "__main__":
     main()
